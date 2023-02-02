@@ -30,12 +30,13 @@ let displayLink = document.querySelector(".display-link");
 // task 7: create and populate an array to store your image urls. Create three more arrays. One to store your song names, one for the artists, and a last one for the song links.
 let Arrimage = ["https://i.scdn.co/image/ab67616d0000b273ae2349de11cfce49ff626c21",
  "https://i.ytimg.com/vi/WZiSPQBY3d8/maxresdefault.jpg", 
- "https://i.ytimg.com/vi/uRqGY42A0FE/sddefault.jpg"];
-let ArrsongName = ['曾经你说', '四季与你', '把孤独当做晚餐'];
-let Arrartist = ['赵乃吉', '程响', '井胧'];
+ "https://i.ytimg.com/vi/uRqGY42A0FE/sddefault.jpg", "https://i.scdn.co/image/ab67616d0000b273037ee6eb1915d9187f727f6d"];
+let ArrsongName = ['曾经你说', '四季与你', '把孤独当做晚餐', '所念皆星河'];
+let Arrartist = ['赵乃吉', '程响', '井胧'，'梦琪'];
 let ArrsongLink = ["https://www.youtube.com/watch?v=ogP1GAFuD4E",
             "https://www.youtube.com/watch?v=WZiSPQBY3d8",
-            "https://www.youtube.com/watch?v=uRqGY42A0FE"
+            "https://www.youtube.com/watch?v=uRqGY42A0FE",
+            "https://www.youtube.com/watch?v=JubGFVWadc8"
            ];
 
 
