@@ -20,20 +20,20 @@ let add = document.querySelector(".add");
 
 
 // task 6: declare variables for your display divs: the image url, song name, artist, and song link. Go back to the HTML to check that you are using the correct class names.
-let displayimage = document.querySelector(".column display-image");
-let displaysong = document.querySelector(".column display-song");
-let displayartist = document.querySelector(".column display-artist");
-let displaylink = document.querySelector(".column display-link");
+let displayImage = document.querySelector(".display-image");
+let displaySong = document.querySelector(".display-song");
+let displayArtist = document.querySelector(".display-artist");
+let displayLink = document.querySelector(".display-link");
 
 
 
 // task 7: create and populate an array to store your image urls. Create three more arrays. One to store your song names, one for the artists, and a last one for the song links.
-Arrimage = ["https://i.scdn.co/image/ab67616d0000b273ae2349de11cfce49ff626c21",
+let Arrimage = ["https://i.scdn.co/image/ab67616d0000b273ae2349de11cfce49ff626c21",
  "https://i.ytimg.com/vi/WZiSPQBY3d8/maxresdefault.jpg", 
  "https://i.ytimg.com/vi/uRqGY42A0FE/sddefault.jpg"];
-ArrsongName = ['曾经你说', '四季与你', '把孤独当做晚餐'];
-Arrartist = ['zhao nai ji', 'cheng xiang', 'jing long'];
-ArrsongLink = ["https://www.youtube.com/watch?v=ogP1GAFuD4E",
+let ArrsongName = ['曾经你说', '四季与你', '把孤独当做晚餐'];
+let Arrartist = ['赵乃吉', '程响', '井胧'];
+let ArrsongLink = ["https://www.youtube.com/watch?v=ogP1GAFuD4E",
             "https://www.youtube.com/watch?v=WZiSPQBY3d8",
             "https://www.youtube.com/watch?v=uRqGY42A0FE"
            ];
@@ -93,7 +93,7 @@ function displaySongInfo() {
   // }
 
   Arrimage.forEach(images => {   
-    displayimage.insertAdjacentHTML(`beforeend`, `<p><img src=${images}</p>`);
+    displayImage.insertAdjacentHTML('beforeend', `<img src=${images}>`);
   });
 
   // for (let i=0; i<ArrsongName.length; i++) {
@@ -101,7 +101,7 @@ function displaySongInfo() {
   // }
 
   ArrsongName.forEach(songs => {
-    displaysong.insertAdjacentHTML(`beforeend`, `<p><img src=${songs}</p>`);
+    displaySong.insertAdjacentHTML('beforeend', `<p>${songs}</p>`);
   });
 
   // for (let i=0; i<Arrartist.length; i++) {
@@ -109,15 +109,15 @@ function displaySongInfo() {
   // }
 
   Arrartist.forEach(artists => {
-    displayartist.insertAdjacentHTML(`beforeend`, `<p><img src=${artists}</p>`);
+    displayArtist.insertAdjacentHTML('beforeend', `<p>${artists}</p>`);
   });
 
   // for (let i=0; i<ArrlinkName.length; i++) {
   //   displaylink.insertAdjacentHTML(`beforeend`, `<p><img src=${ArrlinkName[i]}</p>`);
   // }
 
-  ArrlinkName.forEach(links => {
-    displaylink.insertAdjacentHTML(`beforeend`, `<p><img src=${links}</p>`);
+  ArrsongLink.forEach(links => {
+    displayLink.insertAdjacentHTML('beforeend', `<p>${links}</p>`);
   });
 
 }
