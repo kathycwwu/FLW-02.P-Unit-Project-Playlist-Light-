@@ -28,24 +28,58 @@ let displayLink = document.querySelector(".display-link");
 
 
 // task 7: create and populate an array to store your image urls. Create three more arrays. One to store your song names, one for the artists, and a last one for the song links.
-let Arrimage = ["https://i.scdn.co/image/ab67616d0000b273ae2349de11cfce49ff626c21",
- "https://i.ytimg.com/vi/WZiSPQBY3d8/maxresdefault.jpg", 
- "https://i.ytimg.com/vi/uRqGY42A0FE/sddefault.jpg", "https://i.scdn.co/image/ab67616d0000b273037ee6eb1915d9187f727f6d"];
-let ArrsongName = ['曾经你说', '四季与你', '把孤独当做晚餐', '所念皆星河'];
-let Arrartist = ['赵乃吉', '程响', '井胧'，'梦琪'];
-let ArrsongLink = ["https://www.youtube.com/watch?v=ogP1GAFuD4E",
-            "https://www.youtube.com/watch?v=WZiSPQBY3d8",
-            "https://www.youtube.com/watch?v=uRqGY42A0FE",
-            "https://www.youtube.com/watch?v=JubGFVWadc8"
-           ];
-
+// let Arrimage = ["https://i.scdn.co/image/ab67616d0000b273ae2349de11cfce49ff626c21",
+//  "https://i.ytimg.com/vi/WZiSPQBY3d8/maxresdefault.jpg", 
+//  "https://i.ytimg.com/vi/uRqGY42A0FE/sddefault.jpg", "https://i.scdn.co/image/ab67616d0000b273037ee6eb1915d9187f727f6d"];
+// let ArrsongName = ['曾经你说', '四季与你', '把孤独当做晚餐', '所念皆星河'];
+// let Arrartist = ['赵乃吉', '程响', '井胧'，'梦琪'];
+// let ArrsongLink = ["https://www.youtube.com/watch?v=ogP1GAFuD4E",
+//             "https://www.youtube.com/watch?v=WZiSPQBY3d8",
+//             "https://www.youtube.com/watch?v=uRqGY42A0FE",
+//             "https://www.youtube.com/watch?v=JubGFVWadc8"
+//            ];
 
 //REFACTOR ARRAYS DAY 
 // task 11: comment out the arrays data.
 // task 12: create an object for each of your songs.
+let cjns = {
+  obname: "曾经你说",
+  obartist: "赵乃吉",
+  obimage: "https://i.scdn.co/image/ab67616d0000b273ae2349de11cfce49ff626c21",
+  obsonglink: "https://www.youtube.com/watch?v=ogP1GAFuD4E"
+};
+
+let sjyn = {
+  obname: "四季与你",
+  obartist: "程响",
+  obimage: "https://i.ytimg.com/vi/WZiSPQBY3d8/maxresdefault.jpg",
+  obsonglink: "https://www.youtube.com/watch?v=WZiSPQBY3d8"
+};
+
+let bgddzwc = {
+  obname: "把孤独当做晚餐",
+  obartist: "井胧",
+  obimage: "https://i.ytimg.com/vi/uRqGY42A0FE/sddefault.jpg",
+  obsonglink: "https://www.youtube.com/watch?v=uRqGY42A0FE"
+};
+
+let snjxh = {
+  obname: "所念皆星河",
+  obartist: "梦琪",
+  obimage: "https://i.scdn.co/image/ab67616d0000b273037ee6eb1915d9187f727f6d",
+  obsonglink: "https://www.youtube.com/watch?v=JubGFVWadc8"
+};
 // task 13: inside each object, add key/value pairs to store the image url, song name, artist, and song link.
 // task 14: create an array that stores all of the objects.
+let playlist = [cjns, sjyn, bgddzwc, snjxh];
 
+
+// playlist.push({
+//   obname: "曾经你说",
+//   obartist: "赵乃吉",
+//   obimage: "https://i.scdn.co/image/ab67616d0000b273ae2349de11cfce49ff626c21",
+//   obsonglink: "https://www.youtube.com/watch?v=ogP1GAFuD4E"
+// });
 
 
 //REFACTOR LOOPS DAY 
@@ -60,17 +94,27 @@ let ArrsongLink = ["https://www.youtube.com/watch?v=ogP1GAFuD4E",
 function addSongInfo() {
 
   // task 9: declare a variable to save the user input of the image url. Declare three more variables that save user input: One for the song names, one for the artists, and a last one for the song links.
-  let imageInput = Arrimage.value;
-  let songInput = ArrsongName.value;
-  let artistInput = Arrartist.value;
-  let linkInput = ArrsongLink.value;
+  let imageInput = image.value;
+  let songInput = songName.value;
+  let artistInput = artist.value;
+  let linkInput = songLink.value;
 
   // task 10: use `.push()` to add each input value to the correct array.
-  Arrimage.push(imageInput);
-  ArrsongName.push(songInput);
-  Arrartist.push(artistInput);
-  ArrsongLink.push(linkInput);
-}
+  // Arrimage.push(imageInput);
+  // ArrsongName.push(songInput);
+  // Arrartist.push(artistInput);
+  // ArrsongLink.push(linkInput);
+
+  let newsong = {
+    obname: songInput,
+    obartist: artistInput,
+    obimage: imageInput,
+    obsonglink: linkInput,
+
+    
+  };
+  playlist.push(newsong);
+};
 
 
 
@@ -89,37 +133,44 @@ function emptyDisplay() {
 function displaySongInfo() {
 
   // task 8: loop through your images array and display the images to your songs in the correct div. Create three more loops. One for the song names, one for the artists, and a last one for the song links.
+
+  playlist.forEach(function(item) {
+    displaySong.insertAdjacentHTML('beforeend', `<p>${item.obname}</p>`)
+    displayArtist.insertAdjacentHTML('beforeend', `<p>${item.obartist}</p>`)
+    displayImage.insertAdjacentHTML('beforeend', `<p><img src=${item.obimage}></p>`)
+    displayLink.insertAdjacentHTML('beforeend', `<p><a href=${item.obsonglink}></a></p>`)
+  });
   // for (let i=0; i<Arrimage.length; i++) {
   //   displayimage.insertAdjacentHTML(`beforeend`, `<p><img src=${Arrimage[i]}</p>`);
   // }
 
-  Arrimage.forEach(images => {   
-    displayImage.insertAdjacentHTML('beforeend', `<img src=${images}>`);
-  });
+  // Arrimage.forEach(images => {   
+  //   displayImage.insertAdjacentHTML('beforeend', `<img src=${images}>`);
+  // });
 
-  // for (let i=0; i<ArrsongName.length; i++) {
-  //   displaysong.insertAdjacentHTML(`beforeend`, `<p><img src=${ArrsongName[i]}</p>`);
-  // }
+  // // for (let i=0; i<ArrsongName.length; i++) {
+  // //   displaysong.insertAdjacentHTML(`beforeend`, `<p><img src=${ArrsongName[i]}</p>`);
+  // // }
 
-  ArrsongName.forEach(songs => {
-    displaySong.insertAdjacentHTML('beforeend', `<p>${songs}</p>`);
-  });
+  // ArrsongName.forEach(songs => {
+  //   displaySong.insertAdjacentHTML('beforeend', `<p>${songs}</p>`);
+  // });
 
-  // for (let i=0; i<Arrartist.length; i++) {
-  //   displayartist.insertAdjacentHTML(`beforeend`, `<p><img src=${Arrartist[i]}</p>`);
-  // }
+  // // for (let i=0; i<Arrartist.length; i++) {
+  // //   displayartist.insertAdjacentHTML(`beforeend`, `<p><img src=${Arrartist[i]}</p>`);
+  // // }
 
-  Arrartist.forEach(artists => {
-    displayArtist.insertAdjacentHTML('beforeend', `<p>${artists}</p>`);
-  });
+  // Arrartist.forEach(artists => {
+  //   displayArtist.insertAdjacentHTML('beforeend', `<p>${artists}</p>`);
+  // });
 
-  // for (let i=0; i<ArrlinkName.length; i++) {
-  //   displaylink.insertAdjacentHTML(`beforeend`, `<p><img src=${ArrlinkName[i]}</p>`);
-  // }
+  // // for (let i=0; i<ArrlinkName.length; i++) {
+  // //   displaylink.insertAdjacentHTML(`beforeend`, `<p><img src=${ArrlinkName[i]}</p>`);
+  // // }
 
-  ArrsongLink.forEach(links => {
-    displayLink.insertAdjacentHTML('beforeend', `<p>${links}</p>`);
-  });
+  // ArrsongLink.forEach(links => {
+  //   displayLink.insertAdjacentHTML('beforeend', `<p>${links}</p>`);
+  // });
 
 }
 
