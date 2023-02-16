@@ -135,10 +135,10 @@ function displaySongInfo() {
   // task 8: loop through your images array and display the images to your songs in the correct div. Create three more loops. One for the song names, one for the artists, and a last one for the song links.
 
   playlist.forEach(function(item) {
-    displaySong.insertAdjacentHTML('beforeend', `<p>${item.obname}</p>`)
-    displayArtist.insertAdjacentHTML('beforeend', `<p>${item.obartist}</p>`)
-    displayImage.insertAdjacentHTML('beforeend', `<p><img src=${item.obimage}></p>`)
-    displayLink.insertAdjacentHTML('beforeend', `<p><a href=${item.obsonglink}></a></p>`)
+    displaySong.insertAdjacentHTML('beforeend', `<p>${item.obname}</p>`);
+    displayArtist.insertAdjacentHTML('beforeend', `<p>${item.obartist}</p>`);
+    displayImage.insertAdjacentHTML('beforeend', `<p><img src=${item.obimage}></p>`);
+    displayLink.insertAdjacentHTML('beforeend', `<a href=${item.obsonglink}>${item.obsonglink}</a>`);
   });
   // for (let i=0; i<Arrimage.length; i++) {
   //   displayimage.insertAdjacentHTML(`beforeend`, `<p><img src=${Arrimage[i]}</p>`);
@@ -173,14 +173,17 @@ function displaySongInfo() {
   // });
 
 }
+6015 
 
-
-
-
+388 104 468 
+275 15 246
+94 462 499
+213 315
 
 // click event to add and display songs
 add.onclick = function() {
   addSongInfo();
+  emptyDisplay();
   displaySongInfo();
 };
 
