@@ -173,12 +173,7 @@ function displaySongInfo() {
   // });
 
 }
-6015 
 
-388 104 468 
-275 15 246
-94 462 499
-213 315
 
 // click event to add and display songs
 add.onclick = function() {
